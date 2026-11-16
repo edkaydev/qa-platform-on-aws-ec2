@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-parchment text-slate-900 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  background: rgba(253, 101, 0, 0.22);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.focus-ring {
+  @apply outline-none ring-offset-2 ring-offset-parchment focus-visible:ring-2 focus-visible:ring-ink-500;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(44, 8, 94, 0.22) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(44, 8, 94, 0.22);
+  border-radius: 999px;
+}
+
+.grid-fade {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(253, 101, 0, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(44, 8, 94, 0.12), transparent 50%),
+    linear-gradient(to right, rgba(44, 8, 94, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 8, 94, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
